@@ -27,3 +27,40 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# Application specific directories and files: 
+logs/**
+
+# Intellij generated directories and files: 
+out/**
+.idea/**/contentModel.xml
+
+# IntelliJ user-specific directories and files: 
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# Intellij Sensitive or high-churn files
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+
+# SonarLint plugin
+.idea/sonarlint/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+
+# AWS User-specific
+.idea/**/aws.xml
+
+# Ignore log files
+logs/
+

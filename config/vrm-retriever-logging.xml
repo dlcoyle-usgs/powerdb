@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns="https://logging.apache.org/xml/ns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://logging.apache.org/xml/ns https://logging.apache.org/xml/ns/log4j-config-2.xsd" strict="false" >
+	<Appenders>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} >-> %msg%n"/>
+		</Console>
+		<File name="JOOQLOG" fileName="logs/jooq-debug.log" append="false" immediateFlush="true">
+			<PatternLayout pattern="%d{ISO8601} [%t] %-5p %c: %m%n"/>
+		</File>
+		<File name="FILEOUT_INFO" fileName="logs/vrm-reader-info.log"
+			immediateFlush="true" append="false">
+			<PatternLayout pattern="%d{ISO8601} [%t] %-5p %c: %m%n"/>
+		</File>
+		<File name="FILEOUT_DEBUG" fileName="logs/vrm-reader-debug.log"
+			  immediateFlush="true" append="false">
+			<PatternLayout pattern="%d{ISO8601} [%t] %-5p %c: %m%n"/>
+		</File>
+		<!--
+		<File name="JOOQ_INFO" fileName="logs/jooq-info.log"
+			  immediateFlush="true" append="false">
+			<PatternLayout pattern="%d{ISO8601} [%t] %-5p %c: %m%n"/>
+		</File>
+		<File name="JOOQ_DEBUG" fileName="logs/jooq-debug.log"
+			  immediateFlush="true" append="false">
+			<PatternLayout pattern="%d{ISO8601} [%t] %-5p %c: %m%n"/>
+		</File>
+		-->
+<!--		<RollingFile name="RFOUT"-->
+<!--			fileName="logs/gclas-info.log"-->
+<!--			filePattern="logs/gclas-info.%d{MM-dd-yyyy-HH-mm}.log.gz"-->
+<!--			ignoreExceptions="false">-->
+<!--			<PatternLayout><Pattern>%d{yyyy-MM-dd HH:mm:ss}: %-5p: %m%n</Pattern></PatternLayout>-->
+<!--			<TimeBasedTriggeringPolicy/>-->
+<!--		</RollingFile>-->
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{ABSOLUTE} %5p [%-50c{4}] - %m%n"/>
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Root level="DEBUG">
+			<!-- <AppenderRef ref="Console"/> -->
+<!--			<AppenderRef ref="STDOUT"/>-->
+<!--			<AppenderRef ref="FILEOUT"/>-->
+<!--			<AppenderRef ref="RFOUT"/>-->
+		</Root>
+		<!--<Logger name="gov.usgs" level="TRACE"/>-->
+		<Logger name="gov.usgs" level="INFO">
+			<AppenderRef ref="STDOUT"/>
+			<AppenderRef ref="FILEOUT_INFO"/>
+		</Logger>
+
+		<Logger name="gov.usgs" level="DEBUG">
+			<!-- <AppenderRef ref="STDOUT"/> -->
+			<AppenderRef ref="FILEOUT_DEBUG"/>
+		</Logger>
+		<!--  gov.usgs.wrd.graphEditFrameWork.gui.main  -->
+		<!-- -->
+		<Logger name="org.jooq.tools.*" level="DEBUG">
+			<AppenderRef ref="STDOUT"/>
+			<AppenderRef ref="FILEOUT_DEBUG"/>
+			</Logger>
+		
+
+
+		<!-- SQL execution logging is logged to the LoggerListener logger at DEBUG level -->
+		<!--
+		<Logger name="org.jooq.tools.LoggerListener" level="INFO">
+			<AppenderRef ref="Console"/>
+			<AppenderRef ref="JOOQ_INFO"/>
+		</Logger>
+	     -->
+		<!-- Other jOOQ related debug log output -->
+		<Logger name="org.jooq.tools.LoggerListener" level="DEBUG">
+			<AppenderRef ref="JOOQLOG"/>
+		</Logger>
+
+
+	</Loggers>
+	
+</Configuration>
