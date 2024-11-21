@@ -29,7 +29,7 @@ bin/
 .DS_Store
 
 # Application specific directories and files: 
-logs/**
+## logs/**
 
 # Intellij generated directories and files: 
 out/**
