@@ -22,7 +22,7 @@ public class GUIDUtils {
      * @param args the args string array object
      */
     public static void main(String[] args) {
-        logger.info("main: starting ...");
+        logger.info("GUIDUtils: main: starting ...");
 
         // Generate a UUID
         UUID uuid = UUID.randomUUID();
@@ -36,8 +36,7 @@ public class GUIDUtils {
 
         System.out.println("Converted GUID: " + guidString);
 
-        logger.info("main: finished");
+        logger.info("GUIDUtils: main: finished");
 
     }
-
 }
