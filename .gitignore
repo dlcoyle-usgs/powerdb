@@ -61,6 +61,6 @@ atlassian-ide-plugin.xml
 # AWS User-specific
 .idea/**/aws.xml
 
-# Ignore log files
-logs/
+# Ignore the entire log directory
+# logs/
 
